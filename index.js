@@ -88,22 +88,39 @@ var finances = [
     ];
      var month = finances.length
      var total = 0
-     var profit = 0
      var loss = 0
      var average = 0
      var increase = 0
      var decrease = 0
 
-    /*total number of months included in dataset*/
+    /* 1 total number of months included in dataset*/
+
 console.log("total month:", month)
-    /*net total of profit/losses over the entire period*/
+
+    /* 2 net total of profit over the entire period*/
+
  for (var i = 0; i < month; i ++ ) {
       total = total + finances [i] [1]
  } console.log ("total:", total)
-    /*average of the changes in profit/losses over the entire period
+
+     /* 3 net total of losses over the entire period*/
+
+for (var i = 0; i < month; i ++) {
+ if (finances [i] [1] < 0)
+ losses = total - finances [i] [1]}
+ 
+ console.log("losses: ", losses)
+
+    /* 4 average of the changes in profit/losses over the entire period
       you will need to track what the total change in profits are from month to month and then find average (total/number of months)*/
 
-    /*the greatest increase in profits (date amount) over the entire period*/
+ var financechanges = [0]
+ for (var i = 0; i< finances.length - 1; i++){
+    financechanges.push (finances[i + 1] [1] - finances [i] [1]);}
+    console.log(financechanges)
+
+    /* 5 the greatest increase in profits (date amount) over the entire period*/
+
     
-    /*the greatest decrease in losses (date and amount) over the entire period*/
+    /* 6 the greatest decrease in losses (date and amount) over the entire period*/
 
