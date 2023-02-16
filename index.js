@@ -92,6 +92,7 @@ var finances = [
      var average = 0
      var increase = 0
      var decrease = 0
+     var dates = []
 
     /* 1 total number of months included in dataset*/
 
@@ -114,13 +115,50 @@ for (var i = 0; i < month; i ++) {
     /* 4 average of the changes in profit/losses over the entire period
       you will need to track what the total change in profits are from month to month and then find average (total/number of months)*/
 
- var financechanges = [0]
+// var financechanges = [0]
+//  for (var i = 0; i< finances.length - 1; i++){
+//     financechanges.push (finances[i + 1] [1] - finances [i] [1]);
+//     var totalForAv = 0;
+//     totalForAv += financechanges [i]
+//   }
+//     console.log(totalForAv)
+//     console.log(financechanges)
+var financechanges = [0]
+var totalForAv = 0;
+
  for (var i = 0; i< finances.length - 1; i++){
-    financechanges.push (finances[i + 1] [1] - finances [i] [1]);}
+    if (finances[i] [1] > finances[i + 1] [1])
+    {
+     financechanges.push (finances [i] [1] - finances[i + 1] [1])
+    } else {
+      financechanges.push (finances[i + 1] [1] - finances [i] [1]);
+    }
+      totalForAv += financechanges [i]
+  }
+    console.log(totalForAv)
     console.log(financechanges)
+    console.log(financechanges.length) 
+    average = totalForAv / finances.length 
+    console.log(average)
 
     /* 5 the greatest increase in profits (date amount) over the entire period*/
-
+    var highest = Math.max(...financechanges)
+    for (var i = 0 ; i < finances.length; i ++) {
+      if (finances [i] [1] = highest){
+        var highestMonth = finances [i] [0]
+      }
+    }
+    console.log(highestMonth)
+    console.log("highest change", Math.max(...financechanges))
+    
     
     /* 6 the greatest decrease in losses (date and amount) over the entire period*/
-
+    
+    var lowest = Math.min(...financechanges)
+    for (var i = 0; i < finances.length; i --){
+      if (finances [i] [0]= lowest) {
+        var lowestMonth = finances [i] [0]
+      }
+    }
+    console.log(lowestMonth)
+    console.log("Lowest Change", Math.min(...financechanges))
