@@ -115,14 +115,7 @@ for (var i = 0; i < month; i ++) {
     /* 4 average of the changes in profit/losses over the entire period
       you will need to track what the total change in profits are from month to month and then find average (total/number of months)*/
 
-// var financechanges = [0]
-//  for (var i = 0; i< finances.length - 1; i++){
-//     financechanges.push (finances[i + 1] [1] - finances [i] [1]);
-//     var totalForAv = 0;
-//     totalForAv += financechanges [i]
-//   }
-//     console.log(totalForAv)
-//     console.log(financechanges)
+
 var financechanges = [0]
 var totalForAv = 0;
 
